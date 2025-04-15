@@ -9,7 +9,7 @@ df_gmm = pd.read_csv('Data/GMM.csv')
 df_pyspark = pd.read_csv('Data/PySpark.csv')
 
 st.title("Kết quả mô hình phân cụm")
-st.subheader("🌟 Kết quả tối ưu nhất: K-Means")
+st.subheader("🌟 Kết quả tối ưu nhất: K-Means Scikit")
 
 # Elbow Section
 st.markdown("### Elbow Method")
@@ -110,7 +110,7 @@ tabs = st.tabs(["Manual Segmentation", "GMM", "KMeans PySpark"])
 
 with tabs[0]:
     st.image('img/RFM.png', use_container_width=True)
-    st.markdown("**Số cụm:** 6")
+    st.markdown("**Số cụm:** 5")
 
 with tabs[1]:
     col1, col2 = st.columns(2)
@@ -127,6 +127,17 @@ with tabs[1]:
     
     st.dataframe(df_gmm[['Group','Count','Percent']], use_container_width=True)
 
+    # Create a treemap
+    fig = px.treemap(
+        df_gmm,
+        path=['Group'],  
+        values='Count', 
+        color='Percent',
+        color_continuous_scale='Viridis'
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
+
 with tabs[2]:
     col1, col2 = st.columns(2)
     with col1:
@@ -141,3 +152,15 @@ with tabs[2]:
         st.image('img/pyspark2.png', use_container_width=True)
     
     st.dataframe(df_pyspark[['prediction','Count','Percentage']], use_container_width=True)
+
+     # Create a treemap
+    fig = px.treemap(
+        df_pyspark,
+        path=['prediction'], 
+        values='Count', 
+        color='Percentage',  
+        color_continuous_scale='Viridis', 
+        hover_data={'Count': True, 'Percentage': True} 
+    )
+   
+    st.plotly_chart(fig, use_container_width=True)
