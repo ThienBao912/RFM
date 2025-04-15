@@ -4,6 +4,4 @@ pandas
 matplotlib
 seaborn
 scikit-learn
-datetime
-pickle
 plotly.express
