@@ -1,0 +1,6 @@
+Group,RecencyMean,FrequencyMean,MonetaryMean,Count,Percent
+Loyal,-1.0,1.0,1.0,901,23.11
+New,0.0,-1.0,-1.0,924,23.7
+Churned,1.0,-2.0,-2.0,237,6.08
+VIP,0.0,0.0,0.0,1313,33.68
+Potential,-1.0,-0.0,-0.0,523,13.42

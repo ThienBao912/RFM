@@ -1,0 +1,6 @@
+Cluster,RecencyMean,FrequencyMean,MonetaryMean,Count,Percent
+Churned,-1.0,0.0,0.0,563,14.44
+Potential,0.0,-1.0,-1.0,993,25.47
+Engaged,0.0,0.0,0.0,1188,30.48
+At Risk,0.0,-1.0,-2.0,397,10.18
+VIP,-0.0,1.0,1.0,757,19.42
