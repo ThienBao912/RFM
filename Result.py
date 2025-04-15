@@ -103,7 +103,10 @@ with tabs[4]:
     - Tạo ra các ưu đãi độc quyền cho nhóm này.
     """)
     
-st.divider()
+st.markdown(
+    "<hr style='border: 2px solid #FF5733; border-radius: 5px;'>",
+    unsafe_allow_html=True
+)
 
 st.subheader("📊 Các thuật toán còn lại")
 tabs = st.tabs(["Manual Segmentation", "GMM", "KMeans PySpark"])
