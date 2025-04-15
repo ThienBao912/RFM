@@ -6,7 +6,7 @@ import plotly.express as px
 
 rfm_agg2 = pd.read_csv('Data/rfm_agg2.csv')
 df_gmm = pd.read_csv('Data/GMM.csv')
-df_pyspark = pd.read_csv('Data/pyspark.csv')
+df_pyspark = pd.read_csv('Data/PySpark.csv')
 
 st.title("Kết quả mô hình phân cụm")
 st.subheader("🌟 Kết quả tối ưu nhất: K-Means Scikit")
