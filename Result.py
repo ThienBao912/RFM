@@ -9,7 +9,7 @@ df_gmm = pd.read_csv('Data/GMM.csv')
 df_pyspark = pd.read_csv('Data/PySpark.csv')
 
 st.title("Kết quả mô hình phân cụm")
-st.subheader("🌟 Kết quả tối ưu nhất: K-Means Scikit")
+st.subheader("🌟 Kết quả tối ưu nhất: K-Means")
 
 # Elbow Section
 st.markdown("### Elbow Method")
