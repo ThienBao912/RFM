@@ -20,7 +20,7 @@ with st.sidebar:
 
     col1, col2 = st.columns(2)
     with col1:
-        st.image("img/TBao.JPG", use_container_width=True)
+        st.image("img/TBao.jpg", use_container_width=True)
         st.markdown("- Hồ Nguyễn Thiên Bảo")
     with col2:
         st.image("img/Khoa.jpg", use_container_width=True)
