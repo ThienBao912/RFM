@@ -53,9 +53,9 @@ with st.expander("📊 Tìm hiểu về phương pháp RFM"):
     - Giúp xác định khách hàng mang lại nhiều lợi nhuận nhất
     
     ### Cách tính điểm RFM:
-    - Chia mỗi chỉ số thành 5 nhóm (1-5)
-    - Điểm 5 là tốt nhất, 1 là kém nhất
-    - Tổng hợp thành RFM Score (vd: 555, 345,...)
+    - Chia mỗi chỉ số thành 4 nhóm (1-4)
+    - Điểm 4 là tốt nhất, 1 là kém nhất
+    - Tổng hợp thành RFM Score (vd: 443, 341,...)
     """)
 
 # Load the data
