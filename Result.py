@@ -113,7 +113,7 @@ tabs = st.tabs(["Manual Segmentation", "GMM", "KMeans PySpark"])
 
 with tabs[0]:
     st.image('img/RFM.png', use_container_width=True)
-    st.markdown("**Số cụm:** 5")
+    st.markdown("**Số cụm:** 6")
 
 with tabs[1]:
     col1, col2 = st.columns(2)
