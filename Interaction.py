@@ -32,8 +32,13 @@ def cluster_name(cluster_id):
     }
     return mapping.get(cluster_id, "Không xác định")
 
-st.title("Trải nghiệm phân cụm")
+st.markdown("""
+<div style="background-color: #f9d990; padding: 10px; border-radius: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <h1 style="color: #222; font-weight: 900; font-size: 36px; margin: 0;">Trải nghiệm phân cụm</h1>
+</div>
+""", unsafe_allow_html=True)
 
+st.write("")
 input_method = st.radio("Chọn cách nhập thông tin khách hàng:", 
                        ["Nhập mã khách hàng", "Nhập thông tin khách hàng vào slider", "Tải file CSV"])
 
@@ -48,14 +53,23 @@ if input_method == "Nhập mã khách hàng":
         st.dataframe(result_segments)
 
         try:
-            rfm_values = result_segments[['Recency', 'Frequency', 'Monetary']].values[0]
-            cluster_label = model.predict(scaler.transform([rfm_values]))[0]
-            st.success(f"✅ Cụm khách hàng: **{cluster_name(cluster_label)}**")
+            # Lặp qua từng khách hàng để dự đoán cụm
+            for _, row in result_segments.iterrows():
+                rfm_values = row[['Recency', 'Frequency', 'Monetary']].values
+                cluster_label = model.predict(scaler.transform([rfm_values]))[0]
+                customer_id = int(row['Member_number'])  # Chuyển mã khách hàng thành số nguyên
+                st.success(f"✅ Mã khách hàng: **{customer_id}** thuộc cụm: **{cluster_name(cluster_label)}**")
         except Exception as e:
             st.error(f"Lỗi khi phân cụm: {str(e)}")
-            
-        st.success(f"✅ Lịch sử giao dịch:")
-        st.dataframe(result_trans)
+        
+        # Lặp qua từng khách hàng để hiển thị lịch sử giao dịch
+        try:
+            for customer_id in selected_customers:
+                st.markdown(f"### 🧾 Lịch sử giao dịch của khách hàng: **{int(customer_id)}**")
+                customer_trans = result_trans[result_trans["Member_number"] == customer_id]
+                st.dataframe(customer_trans)
+        except Exception as e:
+            st.error(f"Lỗi khi xử lý lịch sử giao dịch: {str(e)}")
 
 elif input_method == "Nhập thông tin khách hàng vào slider":
     st.subheader("Dự đoán phân cụm từ các giá trị R, F, M")
