@@ -8,7 +8,12 @@ rfm_agg2 = pd.read_csv('Data/rfm_agg2.csv')
 df_gmm = pd.read_csv('Data/GMM.csv')
 df_pyspark = pd.read_csv('Data/PySpark.csv')
 
-st.title("Kết quả mô hình phân cụm")
+st.markdown("""
+<div style="background-color: #f9d990; padding: 10px; border-radius: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <h1 style="color: #222; font-weight: 900; font-size: 36px; margin: 0;">Kết quả mô hình phân cụm</h1>
+</div>
+""", unsafe_allow_html=True)
+
 st.subheader("🌟 Kết quả tối ưu nhất: K-Means Scikit")
 
 # Elbow Section
