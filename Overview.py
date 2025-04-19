@@ -27,7 +27,7 @@ with col1:
 
 with col2:
     st.markdown("""
-   ** Ứng dụng này giúp doanh nghiệp:**
+    **Ứng dụng này giúp doanh nghiệp:**
     - Hiểu rõ hành vi khách hàng
     - Xác định nhóm khách hàng giá trị
     - Đề xuất chiến lược marketing phù hợp
