@@ -17,6 +17,13 @@ pg = st.navigation([Overview, Result, Interaction])
 pg.run()
 
 with st.sidebar:
+    
+    # Thông tin giảng viên
+    st.subheader("👩‍🏫 Giảng viên hướng dẫn:")
+    st.markdown("- Cô Khuất Thùy Phương")
+    
+    # Add another horizontal line
+    st.markdown("<hr style='border: 1px solid #ddd;'>", unsafe_allow_html=True)
 
     # Phần thông tin nhóm
     st.subheader("👨‍💻 Thực hiện bởi:")
@@ -27,16 +34,9 @@ with st.sidebar:
         st.markdown("- Hồ Nguyễn Thiên Bảo")
     with col2:
         st.image("img/Khoa.jpg", use_container_width=True)
-        st.markdown("- Nguyễn  \n  Anh Khoa") 
+        st.markdown("- Nguyễn Anh Khoa") 
     
     # Add a horizontal line
-    st.markdown("<hr style='border: 1px solid #ddd;'>", unsafe_allow_html=True)
-    
-    # Thông tin giảng viên
-    st.subheader("👩‍🏫 Giảng viên hướng dẫn:")
-    st.markdown("- Cô Khuất Thùy Phương")
-    
-    # Add another horizontal line
     st.markdown("<hr style='border: 1px solid #ddd;'>", unsafe_allow_html=True)
     
     # Ngày báo cáo
