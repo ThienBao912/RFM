@@ -68,7 +68,7 @@ with st.expander("📊 Tìm hiểu về phương pháp RFM"):
 st.markdown("""
 ### Thông tin dữ liệu
 Dữ liệu giao dịch từ một cửa hàng bán lẻ ở Mỹ giai từ 01/2014 đến 12/2015.
-**Thuật toán:** `Manual Segmentaion`, `K-Means`, `GMM`, `KMeans PySpark`
+- **Thuật toán:** `Manual Segmentaion`, `K-Means`, `GMM`, `KMeans PySpark`
 """)
 
 col1, col2 = st.columns(2)
